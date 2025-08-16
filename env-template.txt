@@ -9,7 +9,7 @@ SUPABASE_SERVICE_ROLE_KEY=your_service_role_key_here
 DATABASE_URL=postgresql://postgres:[YOUR-PASSWORD]@db.[YOUR-PROJECT-ID].supabase.co:5432/postgres
 
 # NextAuth Configuration
-NEXTAUTH_SECRET=your_nextauth_secret_here
+NEXTAUTH_SECRET=SZI+CbKvkfvhatVmtGmI8CHn95Q7pyWvvB0mHEwKnU4=
 NEXTAUTH_URL=https://your-domain.vercel.app
 
 # ===== CONFIGURAÇÕES OPCIONAIS =====
@@ -32,8 +32,8 @@ NODE_ENV=production
 # 3. Para Vercel, configure as variáveis no painel do projeto
 # 4. NEXTAUTH_URL deve ser a URL de produção (ex: https://seu-app.vercel.app)
 # 5. DATABASE_URL deve apontar para seu banco Supabase
-# 6. NEXTAUTH_SECRET deve ser uma string aleatória segura
+# 6. NEXTAUTH_SECRET já está configurado com uma chave segura
 
-# ===== GERAR NEXTAUTH_SECRET =====
-# Execute: openssl rand -base64 32
-# Ou use: node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
+# ===== VARIÁVEIS CONFIGURADAS =====
+# ✅ NEXTAUTH_SECRET - Chave secreta segura já gerada
+# ⚠️  Configure as demais variáveis com seus valores reais
