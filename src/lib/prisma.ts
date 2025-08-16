@@ -11,8 +11,12 @@ export const prisma = globalForPrisma.prisma ?? new PrismaClient({
       url: process.env.DATABASE_URL,
     },
   },
-  // Configurações adicionais para produção
-  errorFormat: 'minimal',
+  // Configurações SSL para Supabase
+  __internal: {
+    engine: {
+      binaryPath: undefined,
+    },
+  },
 });
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
