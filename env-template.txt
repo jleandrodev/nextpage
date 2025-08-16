@@ -1,0 +1,39 @@
+# ===== CONFIGURAÇÕES OBRIGATÓRIAS =====
+
+# Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key_here
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key_here
+
+# Database Configuration
+DATABASE_URL=postgresql://postgres:[YOUR-PASSWORD]@db.[YOUR-PROJECT-ID].supabase.co:5432/postgres
+
+# NextAuth Configuration
+NEXTAUTH_SECRET=your_nextauth_secret_here
+NEXTAUTH_URL=https://your-domain.vercel.app
+
+# ===== CONFIGURAÇÕES OPCIONAIS =====
+
+# Paddle Configuration (se necessário)
+PADDLE_API_KEY=your_paddle_api_key_here
+PADDLE_WEBHOOK_SECRET=your_paddle_webhook_secret_here
+NEXT_PUBLIC_PADDLE_CLIENT_TOKEN=your_paddle_client_token_here
+NEXT_PUBLIC_PADDLE_ENV=sandbox
+
+# ===== CONFIGURAÇÕES PARA VERCEL =====
+
+# Ambiente
+NODE_ENV=production
+
+# ===== INSTRUÇÕES =====
+
+# 1. Copie este arquivo para .env.local
+# 2. Configure as variáveis com seus valores reais
+# 3. Para Vercel, configure as variáveis no painel do projeto
+# 4. NEXTAUTH_URL deve ser a URL de produção (ex: https://seu-app.vercel.app)
+# 5. DATABASE_URL deve apontar para seu banco Supabase
+# 6. NEXTAUTH_SECRET deve ser uma string aleatória segura
+
+# ===== GERAR NEXTAUTH_SECRET =====
+# Execute: openssl rand -base64 32
+# Ou use: node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
