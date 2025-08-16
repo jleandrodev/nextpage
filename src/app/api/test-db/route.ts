@@ -4,8 +4,8 @@ import { prisma } from '@/lib/prisma';
 export async function GET() {
   try {
     // Testar conexão básica
-    const testResult = await prisma.$queryRaw`SELECT 1 as test`;
-    
+    const result = await prisma.$queryRaw`SELECT 1 as test`;
+
     // Contar registros
     const orgCount = await prisma.organization.count();
     const userCount = await prisma.user.count();
@@ -15,7 +15,7 @@ export async function GET() {
       success: true,
       message: 'Conexão com banco de dados funcionando',
       data: {
-        test: testResult,
+        test: result,
         counts: {
           organizations: orgCount,
           users: userCount,
@@ -24,26 +24,29 @@ export async function GET() {
         environment: {
           nodeEnv: process.env.NODE_ENV,
           hasDatabaseUrl: !!process.env.DATABASE_URL,
-          databaseUrlPrefix: process.env.DATABASE_URL?.substring(0, 20) + '...',
+          databaseUrlPrefix: process.env.DATABASE_URL?.substring(0, 30) + '...',
         },
       },
     });
   } catch (error: any) {
     console.error('Erro na conexão com banco:', error);
-    
-    return NextResponse.json({
-      success: false,
-      message: 'Erro na conexão com banco de dados',
-      error: {
-        message: error.message,
-        code: error.code,
-        meta: error.meta,
+
+    return NextResponse.json(
+      {
+        success: false,
+        message: 'Erro na conexão com banco de dados',
+        error: {
+          message: error.message,
+          code: error.code,
+          meta: error.meta,
+        },
+        environment: {
+          nodeEnv: process.env.NODE_ENV,
+          hasDatabaseUrl: !!process.env.DATABASE_URL,
+          databaseUrlPrefix: process.env.DATABASE_URL?.substring(0, 30) + '...',
+        },
       },
-      environment: {
-        nodeEnv: process.env.NODE_ENV,
-        hasDatabaseUrl: !!process.env.DATABASE_URL,
-        databaseUrlPrefix: process.env.DATABASE_URL?.substring(0, 20) + '...',
-      },
-    }, { status: 500 });
+      { status: 500 },
+    );
   }
 }

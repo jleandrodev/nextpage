@@ -61,6 +61,11 @@ const nextConfig = {
     ignoreBuildErrors: process.env.NODE_ENV === 'production',
   },
 
+  // Configurações de ambiente para Prisma
+  env: {
+    PRISMA_GENERATE_DATAPROXY: 'true',
+  },
+
   // Configurações de headers para Vercel
   async headers() {
     return [
