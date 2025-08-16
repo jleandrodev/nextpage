@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Construir ordenação
-    let orderBy: any = {};
+    const orderBy: any = {};
     switch (sort) {
       case 'recentes':
         orderBy.createdAt = 'desc';

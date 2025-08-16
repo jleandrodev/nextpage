@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { signIn } from 'next-auth/react';
 
 export default function AdminLoginPage() {
@@ -130,9 +131,9 @@ export default function AdminLoginPage() {
           </form>
 
           <div className="text-center mt-6">
-            <a href="/" className="text-sm text-primary hover:text-primary/80">
+            <Link href="/" className="text-sm text-primary hover:text-primary/80">
               ← Voltar para página inicial
-            </a>
+            </Link>
           </div>
         </div>
       </div>
