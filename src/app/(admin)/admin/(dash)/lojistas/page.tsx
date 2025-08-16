@@ -6,6 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { OrganizationService } from '@/lib/services/organization.service';
 import { OrganizationsTable } from '@/components/admin/lojistas/organizations-table';
 
+export const dynamic = 'force-dynamic';
+
 export default async function LojistasPage() {
   return (
     <div className="container mx-auto py-6">

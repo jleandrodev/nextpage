@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { OrganizationService } from '@/lib/services/organization.service';
 import { OrganizationLoginForm } from '@/components/organization/login-form';
 
+export const dynamic = 'force-dynamic';
+
 interface OrganizationLoginPageProps {
   params: Promise<{ orgSlug: string }>;
 }

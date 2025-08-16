@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { OrganizationService } from '@/lib/services/organization.service';
 import { FirstAccessForm } from '@/components/organization/first-access-form';
 
+export const dynamic = 'force-dynamic';
+
 interface FirstAccessPageProps {
   params: Promise<{ orgSlug: string }>;
   searchParams: Promise<{ cpf?: string }>;

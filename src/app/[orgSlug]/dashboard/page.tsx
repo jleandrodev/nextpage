@@ -18,6 +18,8 @@ import {
 import { OrganizationHeader } from '@/components/organization/organization-header';
 import { authOptions } from '@/lib/auth';
 
+export const dynamic = 'force-dynamic';
+
 interface OrganizationDashboardPageProps {
   params: Promise<{ orgSlug: string }>;
 }

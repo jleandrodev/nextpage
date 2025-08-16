@@ -8,9 +8,6 @@
       "maxDuration": 60
     }
   },
-  "env": {
-    "NODE_ENV": "production"
-  },
   "regions": ["gru1"],
   "headers": [
     {
@@ -30,10 +27,5 @@
         }
       ]
     }
-  ],
-  "build": {
-    "env": {
-      "PRISMA_GENERATE_DATAPROXY": "true"
-    }
-  }
+  ]
 }
