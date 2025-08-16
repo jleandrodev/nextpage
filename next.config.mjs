@@ -94,6 +94,11 @@ const nextConfig = {
       },
     ];
   },
+
+  // Configurações de ambiente para Prisma
+  env: {
+    PRISMA_GENERATE_DATAPROXY: 'true',
+  },
 };
 
 export default nextConfig;

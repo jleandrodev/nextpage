@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { prisma } from '@/lib/prisma';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
-import { PrismaClient } from '@prisma/client';
 import JSZip from 'jszip';
 import { PDFDocument } from 'pdf-lib';
 import { StorageService } from '@/lib/services/storage.service';
 import { PdfConverterService } from '@/lib/services/pdf-converter.service';
 
-const prisma = new PrismaClient();
 const pdfConverter = new PdfConverterService();
 
 interface ProcessedEbook {
